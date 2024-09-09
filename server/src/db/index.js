@@ -6,10 +6,14 @@ class Db {
     this.sequelize = this._connect()
   }
   _connect() {
-    const { host, name, user, password } = databaseConfig
+    const { host, name, user, password, port } = databaseConfig
     const sequelize = new Sequelize(name, user, password, {
-      host: host,
+      host,
+      port,
       dialect: "mysql",
+      // dialectOptions: {
+      //   socketPath: 'mysql.sock' // 指定套接字文件路径
+      // },
       logging: databaseConfig.logging
     })
     return sequelize

@@ -106,7 +106,7 @@ async function createDefaultData() {
   const building = await Building.createBuilding({
     name: "梧桐苑"
   })
-  await Building.createBuilding({
+ await Building.createBuilding({
     name: "紫藤苑"
   })
   // 将创建的宿舍楼与 admin 做关联

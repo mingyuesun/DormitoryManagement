@@ -14,8 +14,9 @@ const sysConfig = {
 
 const databaseConfig = {
   host: process.env.DB_HOST || "localhost",
+  port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
   user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "root",
+  password: process.env.DB_PASSWORD || "rootroot" ||"root",
   name: "dormitory",
   rebuild: process.env.DB_REBUILD ? JSON.parse(process.env.DB_REBUILD) : false, // 是否每次重启服务器时重建数据库
   logging: process.env.NODE_ENV === 'development' // 是否再控制台输出建表语句
